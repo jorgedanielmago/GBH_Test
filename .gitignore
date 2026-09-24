@@ -1,0 +1,28 @@
+# Terraform state and plans (contain resource IDs, keys and other environment data)
+*.tfstate
+*.tfstate.*
+tfplan
+*.tfplan
+.terraform/
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local variable values (subscription/tenant IDs, admin IP). Use terraform.tfvars.example instead.
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# VMware installation media: large and not redistributable
+*.iso
+*.ova
+*.vmdk
+
+# Original evidence screenshots (unmasked) and OS/editor junk
+evidencia/originales/
+.DS_Store
+.vscode/
+.idea/

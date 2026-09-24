@@ -1,0 +1,16 @@
+# Copy to terraform.tfvars and fill in. terraform.tfvars is git-ignored.
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+tenant_id           = "00000000-0000-0000-0000-000000000000"
+resource_group_name = "my-resource-group"      # must already exist
+location            = "eastus"
+
+# Quota-constrained plan: everything nested runs inside one KVM lab host
+hosts_per_site  = 0
+deploy_witness  = false
+deploy_lab_host = true
+lab_vm_size     = "Standard_E8s_v3"            # 8 vCPU / 64 GB; use Standard_D8s_v3 if ESv3 quota is short
+
+# Your public IPv4 in CIDR form (curl -4 ifconfig.me), allowed to SSH to the lab host
+admin_source_ip = "203.0.113.10/32"
+
+# admin_ssh_public_key is passed with: export TF_VAR_admin_ssh_public_key="$(cat ~/.ssh/id_rsa.pub)"
